@@ -2,27 +2,51 @@ const fs = require("fs");
 csv = fs.readFileSync("Book1.csv").toString();
 
 let json = csvToJson(csv);
-fs.writeFileSync('output.json',json)
-console.log(json)
+fs.writeFileSync("output.json", json);
+console.log(json);
 
 function csvToJson(csv) {
   var lines = csv.split(/\r\n/g);
   var results = [];
   let headers = lines[0].split(",");
 
-  for (let i = 1; i < lines.length-1; i++) {
+  for (let i = 1; i < lines.length; i++) {
     var obj = {};
 
     let str = lines[i];
     let neResults = [];
     // check String whether string start with ''"'(quotation mark) or not
-    if (str.indexOf('"')===0) {
-      quotionDatas = str.matchAll(/"(((,*\s*\w+\s*\w*),*\s*)+)"|(\d{1,})/g);
-      for (let result of quotionDatas) {
-        if (result[1] !== undefined) {
-          neResults.push(result[1]);
-        } else {
-          neResults.push(result[0]);
+    if (str.indexOf('"') >= 0) {
+      // for nesting quatation
+      if (str.indexOf('""') >= 0) {
+        console.log("true");
+        quotionDatas = str.matchAll(
+          // /"(\w+\s*,*""(\s*\w+\s*)""\s*)"|"*(\w+)"*/g
+          /"((,*("*"*(\s*\w+\s*)"*"*))+)"|"*(\w+)"*/g
+        );
+        for (let result of quotionDatas) {
+          console.log(result, "result");
+          if (result[1] !== undefined) {
+            neResults.push(result[1]);
+          } else {
+            neResults.push(result[0]);
+          }
+          console.log(neResults, "neResults");
+        }
+      } else {
+        //without nesting quatation
+        quotionDatas = str.matchAll(
+          /"(((,*\s*\w+\s*\w*),*\s*)+)"|(\w+\s*"*\w*"*)|\w/g
+        );
+
+        for (let result of quotionDatas) {
+          console.log(result, "result");
+          if (result[1] !== undefined) {
+            neResults.push(result[1]);
+          } else {
+            neResults.push(result[0]);
+          }
+          console.log(neResults, "neResults");
         }
       }
 
@@ -46,4 +70,7 @@ function csvToJson(csv) {
   return JSON.stringify(results); //JSON
 }
 
-
+[
+  { name: 'dscscscs,""sdcscsc"",""dcdvcvd', "roll No": "fdvd", marks: "65" },
+  { name: '""sdcdsc"",dcdscdsdc', "roll No": "555", marks: "5555" },
+];
