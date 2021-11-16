@@ -1,0 +1,50 @@
+.csvtojson *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.csvtojson section{
+  margin: 12px;
+}
+
+.csvtojson .wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 15px;
+  height: 50vh;
+  math-style: 15px;
+}
+.csvtojson section form input{
+  margin-bottom: 25px;
+}
+.csvtojson  .wrapper .left,
+.csvtojson .right {
+  background-color: reds;
+
+  background-color: red;
+}
+.csvtojson .left,
+.csvtojson .right {
+  position: relative;
+}
+.csvtojson .wrapper .right textarea,
+.csvtojson .left textarea {
+  padding: 25px;
+  position: absolute;
+  height: 91%;
+  width: 100%;
+  background-color: rgb(214, 223, 231);
+  color: #000708;
+}
+.csvtojson .convert button {
+  display: block;
+  padding: 15px;
+  background: crimson;
+  width: 127px;
+  margin: 15px 0;
+  border-radius: 5px;
+  outline: none;
+  /* margin: 0; */
+  border: 0;
+  cursor: pointer;
+}

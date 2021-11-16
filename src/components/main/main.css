@@ -1,0 +1,17 @@
+.main .card {
+  background: #03a9f4;
+  padding: 5 px;
+  border-radius: 16 px;
+  text-align: center;
+  padding: 0 12px;
+}
+.main .card a{
+  text-decoration: none;
+}
+.main .wrapper {
+  background: #eee;
+  display: flex;
+  /* grid-template-columns: auto auto; */
+  justify-content: space-around;
+  border-radius: 25 px;
+}

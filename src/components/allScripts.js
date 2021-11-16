@@ -1,12 +1,9 @@
-const fs = require("fs");
-csv = fs.readFileSync("Book1.csv").toString();
+ const fs = require("fs");
 
-let json = csvToJson(csv);
-fs.writeFileSync("output.json", json);
-console.log(json);
 
-function csvToJson(csv) {
-  var lines = csv.split(/\r\n/g);
+
+ function csvToJson(csv) {
+  var lines = csv.split('\n');
   var results = [];
   let headers = lines[0].split(",");
 
@@ -20,7 +17,7 @@ function csvToJson(csv) {
       // for nesting quatation
       if (str.indexOf('""') >= 0) {
         console.log("true");
-        quotionDatas = str.matchAll(
+       let quotionDatas = str.matchAll(
           // /"(\w+\s*,*""(\s*\w+\s*)""\s*)"|"*(\w+)"*/g
           /"((,*("*"*(\s*\w+\s*)"*"*))+)"|"*(\w+)"*/g
         );
@@ -35,18 +32,16 @@ function csvToJson(csv) {
         }
       } else {
         //without nesting quatation
-        quotionDatas = str.matchAll(
+       let quotionDatas = str.matchAll(
           /"(((,*\s*\w+\s*\w*),*\s*)+)"|(\w+\s*"*\w*"*)|\w/g
         );
 
         for (let result of quotionDatas) {
-          console.log(result, "result");
           if (result[1] !== undefined) {
             neResults.push(result[1]);
           } else {
             neResults.push(result[0]);
           }
-          console.log(neResults, "neResults");
         }
       }
 
@@ -67,10 +62,35 @@ function csvToJson(csv) {
   }
 
   //return result; //JavaScript object
-  return JSON.stringify(results); //JSON
+  return results //JSON
 }
 
-[
-  { name: 'dscscscs,""sdcscsc"",""dcdvcvd', "roll No": "fdvd", marks: "65" },
-  { name: '""sdcdsc"",dcdscdsdc', "roll No": "555", marks: "5555" },
-];
+//
+
+
+function jsonToCsv(json){
+  var fields = Object.keys(json[0]);
+  var replacer = function (key, value) {
+    console.log(key);
+    return value === null ? "" : value;
+  };
+  var csv = json.map(function (row) {
+    return fields
+      .map(function (fieldName) {
+        return JSON.stringify(row[fieldName], replacer);
+      })
+      .join(",");
+  });
+  csv.unshift(fields.join(",")); // add header column
+  csv = csv.join("\n");
+
+
+  return csv;
+}
+
+
+
+
+
+
+export  {fs,csvToJson};
