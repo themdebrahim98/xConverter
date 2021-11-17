@@ -16,7 +16,7 @@ export default function CsvToJson() {
     const input = document.querySelector('form input');
     input.addEventListener("change", handleFile);
     convert_button.current.addEventListener("click", tojson);
-    // csv_textarea.addEventListener("keydown", textareaDataUpdate);
+    csv_textarea.current.addEventListener("keydown", textareaDataUpdate);
     console.log(convert_button)
 
 
@@ -56,10 +56,10 @@ export default function CsvToJson() {
       // ))
     };
 
-    // function textareaDataUpdate() {
-    //   csv_textarea.value = csv_textarea.value;
-    //   console.log(csv_textarea.value);
-    // }
+    function textareaDataUpdate() {
+      csv_textarea.current.value = csv_textarea.current.value;
+      console.log(csv_textarea.value);
+    }
 
 
   }, []);

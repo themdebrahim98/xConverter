@@ -23,16 +23,29 @@ export default function Main() {
         <div class="wrapper">
           <div class="card">
 
-          <Link to="/csvtojson"> <h2 >CSV TO JSON</h2></Link>
-            
-        
+            <Link to="/csvtojson"><h2 >CSV TO JSON</h2></Link>
+
+
           </div>
           <div class="card">
             {/* <Link><h2 >JSON TO CSV</h2></Link> */}
-            <h2 >JSON TO CSV</h2>
-           
-            <Link to="/csvtojson"></Link>
-            
+            <Link to="/jsontocsv"> <h2 >JSON TO CSV</h2>
+            </Link>
+
+
+          </div>
+          <div class="card">
+            {/* <Link><h2 >JSON TO CSV</h2></Link> */}
+            <Link to="/jsontocsv"> <h2 >JPEG TO JPG</h2>
+            </Link>
+
+
+          </div>
+          <div class="card">
+            {/* <Link><h2 >JSON TO CSV</h2></Link> */}
+            <Link to="/jsontocsv"> <h2 >JPG TO JPEG</h2>
+            </Link>
+
 
           </div>
 

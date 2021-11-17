@@ -1,39 +1,40 @@
-.csvtojson *{
+.jsontocsv *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-.csvtojson section{
+.jsontocsv section{
   margin: 12px;
 }
-.csvtojson .header h1{
+.jsontocsv .header h1{
   color: crimson;
   font-size: 45px;
   text-align: center;
   text-transform: capitalize;
 }
-.csvtojson .wrapper {
+
+.jsontocsv .wrapper {
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 15px;
   height: 50vh;
   math-style: 15px;
 }
-.csvtojson section form input{
+.jsontocsv section form input{
   margin-bottom: 25px;
 }
-.csvtojson  .wrapper .left,
-.csvtojson .right {
+.jsontocsv  .wrapper .left,
+.jsontocsv .right {
   background-color: reds;
 
   background-color: blue;
 }
-.csvtojson .left,
-.csvtojson .right {
+.jsontocsv .left,
+.jsontocsv .right {
   position: relative;
 }
-.csvtojson .wrapper .right textarea,
-.csvtojson .left textarea {
+.jsontocsv .wrapper .right textarea,
+.jsontocsv .left textarea {
   padding: 25px;
   position: absolute;
   height: 91%;
@@ -41,7 +42,7 @@
   background-color: rgb(214, 223, 231);
   color: #000708;
 }
-.csvtojson .convert button {
+.jsontocsv .convert button {
   display: block;
   padding: 15px;
   background: crimson;

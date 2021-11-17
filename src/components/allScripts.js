@@ -68,7 +68,25 @@
 //
 
 
-function jsonToCsv(json){
+export default function jsonToCsv(json){
+  // json =[
+  //   {
+  //     "name": "md ebrahim",
+  //     "roll No": "sfhgysg544545",
+  //     "marks": "6303590387"
+  //   },
+  //   {
+  //     "name": "dgdgdgd",
+  //     "roll No": "dhdhfh",
+  //     "marks": "555255"
+  //   },
+  //   {
+  //     "name": "fjhbhbjbbvdv",
+  //     "roll No": "dhvbdbvhdbv",
+  //     "marks": "785"
+  //   }
+  // ]
+  console.log(json,'all')
   var fields = Object.keys(json[0]);
   var replacer = function (key, value) {
     console.log(key);
@@ -83,7 +101,7 @@ function jsonToCsv(json){
   });
   csv.unshift(fields.join(",")); // add header column
   csv = csv.join("\n");
-
+console.log(csv)
 
   return csv;
 }
