@@ -39,7 +39,8 @@ export default function JsonToCsv() {
 
       // console.log(data)
       let jsonData = JSON.parse(json_textarea.current.value,null,0);
-      let csv = jsontocsv(jsonData);
+       let csv = jsontocsv(jsonData);
+  
       csv_textarea.current.value = csv
 
 
