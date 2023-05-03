@@ -1,31 +1,30 @@
 <h3 align="center">
     <a href="#">
-        <img height="100" src="https://raw.githubusercontent.com/mdebrahim98/Weatherify/master/logo.png" alt="logo" title="xConverter">
+        <img height="100" src="https://raw.githubusercontent.com/mdebrahim98/xConverter/master/logo.png" alt="logo" title="xConverter">
     </a>
 </h1>
 <h3 align="center">
-Weatherify
+xConverter
 </h3>
 <p align="center">
-View weather conditions for any city just by typing its name
+Convert one file type to different file type e.g. CSV to JSON or vice versa.
 </p>
 <br>
 
-[![Contributors](https://img.shields.io/github/contributors/mdebrahim98/Weatherify.svg)](https://github.com/mdebrahim98/Weatherify/graphs/contributors)
-[![License](https://img.shields.io/github/license/mdebrahim98/Weatherify.svg)](https://github.com/mdebrahim98/Weatherify/blob/master/LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/mdebrahim98/xConverter.svg)](https://github.com/mdebrahim98/xConverter/graphs/contributors)
+[![License](https://img.shields.io/github/license/mdebrahim98/xConverter.svg)](https://github.com/mdebrahim98/xConverter/blob/master/LICENSE)
 
-# What is [xConverter](https://checkweather98.netlify.app/)?
+# What is [xConverter](https://xconverter.netlify.app/)?
 
-Weatherify helps you to view weather conditions for any city just by typing its name, it doesn't require any login or registration.
-An utility app to convert files types to a different files type, example: CSV to JSON, png to jpeg etc
+The xConverter is an utility app to convert a file type to a different file type, example: CSV to JSON or vice versa, it doesn't require any login or registration.
 
 ## How to use?
 
-Just open the [app](https://checkweather98.netlify.app/) and type the city name and hit enter, it will fetch the required weather data and it will show these in data card.
+Just open the [app](https://xconverter.netlify.app/) and choose the appropriate converter button and fill up the required inputs.
 
 ## Feedback
 
-Give me your valuable feedback or opinion by creating Github [issue](https://github.com/mdebrahim98/Weatherify/issues/new).
+Give me your valuable feedback or opinion by creating Github [issue](https://github.com/mdebrahim98/xConverter/issues/new).
 
 ## Contributing
 
